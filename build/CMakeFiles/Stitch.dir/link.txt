@@ -1,0 +1,1 @@
+/sbin/c++ -g -Wl,--dependency-file=CMakeFiles/Stitch.dir/link.d CMakeFiles/Stitch.dir/main.cpp.o -o Stitch
