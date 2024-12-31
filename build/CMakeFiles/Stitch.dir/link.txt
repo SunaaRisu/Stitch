@@ -1,1 +1,1 @@
-/sbin/c++ -g -Wl,--dependency-file=CMakeFiles/Stitch.dir/link.d CMakeFiles/Stitch.dir/main.cpp.o -o Stitch
+/sbin/c++ -g -Wl,--dependency-file=CMakeFiles/Stitch.dir/link.d CMakeFiles/Stitch.dir/main.cpp.o CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.o -o Stitch  -lGL /usr/lib/libglfw.so.3.4

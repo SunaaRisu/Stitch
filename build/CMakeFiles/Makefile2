@@ -1009,12 +1009,12 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 CMakeFiles/Stitch.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sunaa/dev/Stitch/build/CMakeFiles --progress-num=1,2 "Built target Stitch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sunaa/dev/Stitch/build/CMakeFiles --progress-num=1,2,3 "Built target Stitch"
 .PHONY : CMakeFiles/Stitch.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Stitch.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sunaa/dev/Stitch/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sunaa/dev/Stitch/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Stitch.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sunaa/dev/Stitch/build/CMakeFiles 0
 .PHONY : CMakeFiles/Stitch.dir/rule
@@ -1026,7 +1026,7 @@ Stitch: CMakeFiles/Stitch.dir/rule
 # codegen rule for target.
 CMakeFiles/Stitch.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sunaa/dev/Stitch/build/CMakeFiles --progress-num=1,2 "Finished codegen for target Stitch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sunaa/dev/Stitch/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target Stitch"
 .PHONY : CMakeFiles/Stitch.dir/codegen
 
 # clean rule for target.

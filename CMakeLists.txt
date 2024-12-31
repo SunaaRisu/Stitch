@@ -6,7 +6,7 @@ enable_testing()
 
 find_package(glfw3 3.4 REQUIRED)
 
-add_executable(Stitch main.cpp)
-target_link_libraries(Stitch)
+add_executable(Stitch main.cpp Stitch/Core/display.cpp Stitch/Core/display.h)
+target_link_libraries(Stitch GL glfw)
 
 set_property(TARGET Stitch PROPERTY CXX_STANDARD 23)

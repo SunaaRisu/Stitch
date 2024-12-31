@@ -503,6 +503,30 @@ Stitch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/build
 .PHONY : Stitch/fast
 
+Stitch/Core/display.o: Stitch/Core/display.cpp.o
+.PHONY : Stitch/Core/display.o
+
+# target to build an object file
+Stitch/Core/display.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.o
+.PHONY : Stitch/Core/display.cpp.o
+
+Stitch/Core/display.i: Stitch/Core/display.cpp.i
+.PHONY : Stitch/Core/display.i
+
+# target to preprocess a source file
+Stitch/Core/display.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.i
+.PHONY : Stitch/Core/display.cpp.i
+
+Stitch/Core/display.s: Stitch/Core/display.cpp.s
+.PHONY : Stitch/Core/display.s
+
+# target to generate assembly for a file
+Stitch/Core/display.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stitch.dir/build.make CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.s
+.PHONY : Stitch/Core/display.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -565,6 +589,9 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... Stitch"
+	@echo "... Stitch/Core/display.o"
+	@echo "... Stitch/Core/display.i"
+	@echo "... Stitch/Core/display.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

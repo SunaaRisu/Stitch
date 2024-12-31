@@ -1,6 +1,16 @@
-#include <iostream>
+#include "Stitch/Core/display.h"
+
+#define WIDTH 1080
+#define HEIGHT 1080
 
 int main() {
-  std::cout << "Hello Stitch!" << std::endl;
-  std::cin.get();
+  Display display(WIDTH, HEIGHT, "Hello Stitch!");
+
+  while (!display.IsClosed()) {
+    display.Clear(0.1f, 0.1f, 0.1f, 1.0f);
+
+    display.Update();
+  }
+
+  return 0;
 }
