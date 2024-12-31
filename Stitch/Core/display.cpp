@@ -13,7 +13,7 @@ Display::Display(int width, int height, const char* title) {
 
   glfwMakeContextCurrent(m_window);
 
-  if (glfwInit() != GLEW_OK) {
+  if (glewInit() != GLEW_OK) {
     std::cerr << "GLEW failed to initialize!" << std::endl;
   }
 
