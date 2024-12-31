@@ -12,6 +12,12 @@ Display::Display(int width, int height, const char* title) {
   }
 
   glfwMakeContextCurrent(m_window);
+
+  if (glfwInit() != GLEW_OK) {
+    std::cerr << "GLEW failed to initialize!" << std::endl;
+  }
+
+  std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 }
 
 Display::~Display() {
@@ -27,13 +33,8 @@ bool Display::IsClosed() {
   return glfwWindowShouldClose(m_window);
 }
 
-void Display::Update() {
-  glBegin(GL_TRIANGLES);
-  glVertex2f(-0.5f, -0.5f);
-  glVertex2f( 0.0f,  0.5f);
-  glVertex2f( 0.5f, -0.5f);
-  glEnd();
-  
+void Display::Update() {  
   glfwSwapBuffers(m_window);
+
   glfwPollEvents();
 }

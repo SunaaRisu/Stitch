@@ -1,25 +1,26 @@
 CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.o: \
  /home/sunaa/dev/Stitch/Stitch/Core/display.cpp \
  /usr/include/stdc-predef.h /home/sunaa/dev/Stitch/Stitch/Core/display.h \
- /usr/include/GL/gl.h /usr/include/GL/glext.h \
- /usr/include/KHR/khrplatform.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
+ /usr/include/GL/glew.h /usr/include/c++/14.2.1/cstddef \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
  /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+ /usr/include/c++/14.2.1/pstl/pstl_config.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h \
+ /usr/include/c++/14.2.1/bits/version.h /usr/include/c++/14.2.1/cstdint \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
  /usr/include/bits/time64.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/GLFW/glfw3.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h \
+ /usr/include/bits/stdint-least.h /usr/include/GL/glu.h \
+ /usr/include/GL/gl.h /usr/include/GLFW/glfw3.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/14.2.1/pstl/pstl_config.h \
  /usr/include/c++/14.2.1/ostream /usr/include/c++/14.2.1/ios \
  /usr/include/c++/14.2.1/iosfwd /usr/include/c++/14.2.1/bits/stringfwd.h \
  /usr/include/c++/14.2.1/bits/memoryfwd.h \
@@ -32,7 +33,6 @@ CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.o: \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
  /usr/include/bits/types/__locale_t.h /usr/include/c++/14.2.1/exception \
  /usr/include/c++/14.2.1/bits/exception.h \
- /usr/include/c++/14.2.1/bits/version.h \
  /usr/include/c++/14.2.1/bits/exception_ptr.h \
  /usr/include/c++/14.2.1/bits/exception_defines.h \
  /usr/include/c++/14.2.1/bits/cxxabi_init_exception.h \
@@ -128,7 +128,6 @@ CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.o: \
  /usr/include/c++/14.2.1/bits/charconv.h \
  /usr/include/c++/14.2.1/bits/basic_string.tcc \
  /usr/include/c++/14.2.1/bits/memory_resource.h \
- /usr/include/c++/14.2.1/cstddef \
  /usr/include/c++/14.2.1/bits/uses_allocator.h \
  /usr/include/c++/14.2.1/bits/uses_allocator_args.h \
  /usr/include/c++/14.2.1/tuple /usr/include/c++/14.2.1/bits/ranges_util.h \
@@ -161,7 +160,7 @@ CMakeFiles/Stitch.dir/Stitch/Core/display.cpp.o: \
  /usr/include/c++/14.2.1/span /usr/include/c++/14.2.1/variant \
  /usr/include/c++/14.2.1/bits/parse_numbers.h \
  /usr/include/c++/14.2.1/bits/ranges_algobase.h \
- /usr/include/c++/14.2.1/bits/unicode.h /usr/include/c++/14.2.1/cstdint \
+ /usr/include/c++/14.2.1/bits/unicode.h \
  /usr/include/c++/14.2.1/bits/stl_algo.h \
  /usr/include/c++/14.2.1/bits/algorithmfwd.h \
  /usr/include/c++/14.2.1/bits/stl_heap.h \
