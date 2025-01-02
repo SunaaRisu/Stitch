@@ -1,10 +1,10 @@
 #include "shader.h"
 
 #include <alloca.h>
-#include <iostream>
-#include <string>
 #include <fstream>
+#include <iostream>
 #include <sstream>
+#include <string>
 
 struct ShaderProgramSource {
   std::string VertexSource;
@@ -13,8 +13,10 @@ struct ShaderProgramSource {
 
 static ShaderProgramSource ParseShader(const std::string &filePath);
 static unsigned int CompileShader(unsigned int type, const std::string &source);
-static unsigned int CreateShader(const std::string &vertexShader, const std::string &fragmentShader);
-static bool CheckError(unsigned int program, unsigned int flag, bool isProgram, const std::string &errorMessage);
+static unsigned int CreateShader(const std::string &vertexShader,
+                                 const std::string &fragmentShader);
+static bool CheckError(unsigned int program, unsigned int flag, bool isProgram,
+                       const std::string &errorMessage);
 
 Shader::Shader(const std::string &filePath) {
   ShaderProgramSource source = ParseShader(filePath);
@@ -25,16 +27,12 @@ void Shader::Bind() { glUseProgram(m_program); }
 
 void Shader::Update() {}
 
-Shader::~Shader() {
-  glDeleteProgram(m_program);
-}
+Shader::~Shader() { glDeleteProgram(m_program); }
 
 static ShaderProgramSource ParseShader(const std::string &filePath) {
   std::ifstream stream(filePath);
 
-  enum class ShaderType {
-    NONE = -1, VERTEX = 0, FRAGMENT = 1
-  };
+  enum class ShaderType { NONE = -1, VERTEX = 0, FRAGMENT = 1 };
 
   std::string line;
   std::stringstream ss[2];
@@ -45,28 +43,30 @@ static ShaderProgramSource ParseShader(const std::string &filePath) {
         type = ShaderType::VERTEX;
       else if (line.find("fragment") != std::string::npos)
         type = ShaderType::FRAGMENT;
-    }
-    else {
+    } else {
       ss[(int)type] << line << '\n';
     }
   }
 
-  return { ss[0].str(), ss[1].str() };
+  return {ss[0].str(), ss[1].str()};
 }
 
-static unsigned int CompileShader(unsigned int type, const std::string &source) {
+static unsigned int CompileShader(unsigned int type,
+                                  const std::string &source) {
   unsigned int id = glCreateShader(type);
   const char *src = source.c_str();
   glShaderSource(id, 1, &src, nullptr);
   glCompileShader(id);
 
-  if (CheckError(id, GL_COMPILE_STATUS, false, "Error: Shader compilation failed: "))
+  if (CheckError(id, GL_COMPILE_STATUS, false,
+                 "Error: Shader compilation failed: "))
     return 0;
 
   return id;
 }
 
-static unsigned int CreateShader(const std::string &vertexShader, const std::string &fragmentShader) {
+static unsigned int CreateShader(const std::string &vertexShader,
+                                 const std::string &fragmentShader) {
   unsigned int program = glCreateProgram();
   unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
   unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
@@ -74,11 +74,14 @@ static unsigned int CreateShader(const std::string &vertexShader, const std::str
   glAttachShader(program, vs);
   glAttachShader(program, fs);
   glLinkProgram(program);
-  if (CheckError(program, GL_LINK_STATUS, true, "Error: Program linking failed: "))
+  if (CheckError(program, GL_LINK_STATUS, true,
+                 "Error: Program linking failed: "))
     return 0;
   glValidateProgram(program);
-  if (CheckError(program, GL_VALIDATE_STATUS, true, "Error: Program is invalid: "))
-    return 0;;
+  if (CheckError(program, GL_VALIDATE_STATUS, true,
+                 "Error: Program is invalid: "))
+    return 0;
+  ;
 
   glDeleteShader(vs);
   glDeleteShader(fs);
@@ -86,15 +89,16 @@ static unsigned int CreateShader(const std::string &vertexShader, const std::str
   return program;
 }
 
-static bool CheckError(unsigned int program, unsigned int flag, bool isProgram, const std::string &errorMessage) {
+static bool CheckError(unsigned int program, unsigned int flag, bool isProgram,
+                       const std::string &errorMessage) {
   int success = 0;
 
-  if(isProgram)
+  if (isProgram)
     glGetProgramiv(program, flag, &success);
   else
     glGetShaderiv(program, flag, &success);
 
-  if(!success) {
+  if (!success) {
     if (isProgram) {
       int length;
       glGetProgramiv(program, GL_INFO_LOG_LENGTH, &length);
@@ -102,7 +106,7 @@ static bool CheckError(unsigned int program, unsigned int flag, bool isProgram, 
       glGetProgramInfoLog(program, length, &length, message);
       std::cerr << errorMessage << ": '" << message << "'" << std::endl;
       glDeleteProgram(program);
-    }else {
+    } else {
       int length;
       glGetShaderiv(program, GL_INFO_LOG_LENGTH, &length);
       char *message = (char *)alloca(length * sizeof(char));
