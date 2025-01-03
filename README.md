@@ -1,9 +1,9 @@
 # Stitch
 <p align="center">
-  <img align="center" width="100" src="Resources/Branding/Stitch_Logo.webp" />
+  <img align="center" width="200" src="Resources/Branding/Stitch_Logo.webp" />
 
-  <h1 align="center">Github Readme Quotes</h1>
-  <h3 align="center">Developer Quotes for your Github Readme.</h3>
+  <h1 align="center">Stitch</h1>
+  <h3 align="center">"Game Engine"</h3>
 </p>
 
 <!-- Badges -->
