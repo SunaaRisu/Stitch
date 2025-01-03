@@ -5,15 +5,16 @@
   <h1 align="center">Stitch</h1>
   <h3 align="center">"Game Engine"</h3>
 </p>
+<br/>
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://github.com/PiyushSuthar/github-readme-quotes/issues">
-    <img src="https://img.shields.io/github/issues/PiyushSuthar/github-readme-quotes?style=flat-square">
+  <a href="https://github.com/SunaaRisu/Stitch/issues">
+    <img src="https://img.shields.io/github/issues/SunaaRisu/Stitch?style=flat-square">
   </a>
 
-  <a href="https://github.com/PiyushSuthar/github-readme-quotes/pulls">
-    <img src="https://img.shields.io/github/issues-pr/PiyushSuthar/github-readme-quotes?style=flat-square">
+  <a href="https://github.com/SunaaRisu/Stitch/pulls">
+    <img src="https://img.shields.io/github/issues-pr/SunaaRisu/Stitch?style=flat-square">
   </a>
 </p>
 # Welcome to the Stitch Wiki!
