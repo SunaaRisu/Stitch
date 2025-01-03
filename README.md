@@ -17,6 +17,7 @@
     <img src="https://img.shields.io/github/issues-pr/SunaaRisu/Stitch?style=flat-square">
   </a>
 </p>
+
 # Welcome to the Stitch Wiki!
 
 Stitch is a simple and VERY slowly growing "game engine" made by stitching together random code and hack solutions. :)
