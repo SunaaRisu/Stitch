@@ -25,3 +25,10 @@ Stitch is a simple and VERY slowly growing "game engine" made by stitching toget
 This is my first time doing something like this and feedback is very welcome. :3
 
 If you want to use Stitch to do something with it, feel free to do so!!
+
+# Get Started
+
+1. Add this repository to your project folder.
+   This repository uses submodules to compile dependencies like glew or glfw from source.
+   You need to clone it recursively. `git clone --recursive https://github.com/SunaaRisu/Stitch`
+   If the repository was cloned non-recursively previously, use `git submodule update --init --recursive` to clone the necessary submodules.
