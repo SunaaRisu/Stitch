@@ -4,3 +4,6 @@
 [submodule "Stitch/vendor/glew"]
 	path = Stitch/vendor/glew
 	url = git@github.com:nigels-com/glew.git
+[submodule "Stitch/vendor/glfw"]
+	path = Stitch/vendor/glfw
+	url = git@github.com:glfw/glfw.git
