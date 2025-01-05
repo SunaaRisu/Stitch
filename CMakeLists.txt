@@ -10,7 +10,7 @@ add_library(stitch SHARED
 )
 
 add_subdirectory(Stitch/vendor/glew-2.2.0/build/cmake)
-target_link_libraries(stitch GL)
+target_link_libraries(stitch glew)
 
 include_directories(Stitch/vendor/glew-2.2.0/include)
 
