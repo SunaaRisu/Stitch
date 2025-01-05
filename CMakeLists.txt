@@ -15,9 +15,7 @@ target_link_libraries(stitch glfw)
 set_target_properties(stitch PROPERTIES
   VERSION ${PROJECT_VERSION}
   SOVERSION ${PROJECT_VERSION_MAJOR}
-  PUBLIC_HEADER Stitch/include/stitch.h)
-
-target_include_directories(stitch PRIVATE Stitch/vendor/glfw/include)
+  PUBLIC_HEADER Stitch/Stitch/include/Stitch/)
 
 install(TARGETS stitch
   LIBRARY DESTINATION lib
