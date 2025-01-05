@@ -4,7 +4,7 @@ project(stitch VERSION 1.0.0 DESCRIPTION "Stitch Game Engine" HOMEPAGE_URL "http
 
 include(GNUInstallDirs)
 
-add_library(stitch
+add_library(stitch SHARED
   Stitch/src/Core/display.cpp
   Stitch/src/Renderer/shader.cpp
 )
@@ -16,6 +16,8 @@ set_target_properties(stitch PROPERTIES
   VERSION ${PROJECT_VERSION}
   SOVERSION ${PROJECT_VERSION_MAJOR}
   PUBLIC_HEADER Stitch/include/stitch.h)
+
+# target_include_directories(stitch PRIVATE Stitch/vendor/glfw/include)
 
 install(TARGETS stitch
   LIBRARY DESTINATION lib

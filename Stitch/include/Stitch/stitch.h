@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../src/Core/display.h"
+#include "../../src/Core/display.h"
 
 // --- Renderer -----------------
 
