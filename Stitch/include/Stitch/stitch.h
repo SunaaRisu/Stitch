@@ -4,6 +4,6 @@
 
 // --- Renderer -----------------
 
-#include "../src/Renderer/shader.h"
+#include "../../src/Renderer/shader.h"
 
 // ------------------------------
