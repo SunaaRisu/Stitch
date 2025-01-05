@@ -17,7 +17,7 @@ set_target_properties(stitch PROPERTIES
   SOVERSION ${PROJECT_VERSION_MAJOR}
   PUBLIC_HEADER Stitch/include/stitch.h)
 
-# target_include_directories(stitch PRIVATE Stitch/vendor/glfw/include)
+target_include_directories(stitch PRIVATE Stitch/vendor/glfw/include)
 
 install(TARGETS stitch
   LIBRARY DESTINATION lib
