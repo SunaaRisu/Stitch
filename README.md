@@ -1,6 +1,6 @@
 # Stitch
 <p align="center">
-  <img style="border-radius: 50%" align="center" width="200" src="Resources/Branding/Stitch_Logo.webp" />
+  <img style="border-radius:50px" align="center" width="200" src="Resources/Branding/Stitch_Logo.webp" />
 
   <h1 align="center">Stitch</h1>
   <h3 align="center">"Game Engine"</h3>
