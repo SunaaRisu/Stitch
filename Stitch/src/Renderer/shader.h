@@ -11,6 +11,8 @@ public:
   void Bind();
   void Update();
 
+  inline int GetUniformLocation(const char* name) { return glGetUniformLocation(m_program, name); }
+
   ~Shader();
 
 private:
