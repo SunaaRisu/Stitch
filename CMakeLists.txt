@@ -9,8 +9,11 @@ add_library(stitch SHARED
   Stitch/src/Renderer/shader.cpp
 )
 
+option(BUILD_UTILS OFF)
+option(BUILD_SHARED_LIBS OFF)
+add_compile_options(-fPIC)
 add_subdirectory(Stitch/vendor/glew-2.2.0/build/cmake)
-target_link_libraries(stitch glew)
+target_link_libraries(stitch glew_s)
 
 include_directories(Stitch/vendor/glew-2.2.0/include)
 
