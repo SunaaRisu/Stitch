@@ -4,7 +4,7 @@ endif ()
 
 project (glew C)
 
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.10)
 
 include(GNUInstallDirs)
 
@@ -14,6 +14,10 @@ endif()
 
 if(POLICY CMP0042)
   cmake_policy (SET CMP0042 NEW)
+endif()
+
+if(POLICY CMP0072)
+  cmake_policy (SET CMP0072 NEW)
 endif()
 
 set(CMAKE_DEBUG_POSTFIX d)
