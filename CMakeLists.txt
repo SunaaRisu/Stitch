@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.10)
 
 project(stitch VERSION 1.0.0 DESCRIPTION "Stitch Game Engine" HOMEPAGE_URL "https://github.com/SunaaRisu/Stitch")
 
