@@ -6,30 +6,15 @@
 #include <sstream>
 #include <string>
 
-struct ShaderProgramSource {
-  std::string VertexSource;
-  std::string FragmentSource;
-};
-
-static ShaderProgramSource ParseShader(const std::string &filePath);
-static unsigned int CompileShader(unsigned int type, const std::string &source);
-static unsigned int CreateShader(const std::string &vertexShader,
-                                 const std::string &fragmentShader);
-static bool CheckError(unsigned int program, unsigned int flag, bool isProgram,
-                       const std::string &errorMessage);
-
-Shader::Shader(const std::string &filePath) {
+Shader::Shader(const std::string &filePath)
+    : m_SrcFilePath(filePath), m_ProgramID(0) {
   ShaderProgramSource source = ParseShader(filePath);
-  m_program = CreateShader(source.VertexSource, source.FragmentSource);
+  m_ProgramID = CreateShader(source.VertexSource, source.FragmentSource);
 }
 
-void Shader::Bind() { glUseProgram(m_program); }
+Shader::~Shader() { glDeleteProgram(m_ProgramID); }
 
-void Shader::Update() {}
-
-Shader::~Shader() { glDeleteProgram(m_program); }
-
-static ShaderProgramSource ParseShader(const std::string &filePath) {
+ShaderProgramSource Shader::ParseShader(const std::string &filePath) {
   std::ifstream stream(filePath);
 
   enum class ShaderType { NONE = -1, VERTEX = 0, FRAGMENT = 1 };
@@ -51,7 +36,7 @@ static ShaderProgramSource ParseShader(const std::string &filePath) {
   return {ss[0].str(), ss[1].str()};
 }
 
-static unsigned int CompileShader(unsigned int type,
+unsigned int Shader::CompileShader(unsigned int type,
                                   const std::string &source) {
   unsigned int id = glCreateShader(type);
   const char *src = source.c_str();
@@ -65,7 +50,7 @@ static unsigned int CompileShader(unsigned int type,
   return id;
 }
 
-static unsigned int CreateShader(const std::string &vertexShader,
+unsigned int Shader::CreateShader(const std::string &vertexShader,
                                  const std::string &fragmentShader) {
   unsigned int program = glCreateProgram();
   unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
@@ -117,4 +102,25 @@ static bool CheckError(unsigned int program, unsigned int flag, bool isProgram,
     return true;
   }
   return false;
+}
+
+void Shader::Bind() const { glUseProgram(m_ProgramID); }
+
+void Shader::Unbind() const { glUseProgram(0); }
+
+void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3) {
+  glUniform4f(GetUniformLocation(name), v0, v1, v2, v3);
+}
+
+int Shader::GetUniformLocation(const std::string& name) {
+  if (m_UniformLocationCache.find(name) != m_UniformLocationCache.end()) {
+    return m_UniformLocationCache[name];
+  }
+
+  int location = glGetUniformLocation(m_ProgramID, name.c_str());
+  if (location == -1) {
+    std::cout << "Warning: uniform '" << name << "' doesn't exist!" << std::endl;
+  }
+  m_UniformLocationCache[name] = location;
+  return location;
 }
