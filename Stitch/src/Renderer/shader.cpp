@@ -74,7 +74,7 @@ unsigned int Shader::CreateShader(const std::string &vertexShader,
   return program;
 }
 
-static bool CheckError(unsigned int program, unsigned int flag, bool isProgram,
+bool Shader::CheckError(unsigned int program, unsigned int flag, bool isProgram,
                        const std::string &errorMessage) {
   int success = 0;
 
