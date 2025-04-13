@@ -7,6 +7,23 @@ include(GNUInstallDirs)
 add_library(stitch SHARED
   Stitch/src/Core/display.cpp
   Stitch/src/Renderer/shader.cpp
+
+  Stitch/vendor/imGui/imconfig.h
+  Stitch/vendor/imGui/imgui.cpp
+  Stitch/vendor/imGui/imgui.h
+  Stitch/vendor/imGui/imgui_demo.cpp
+  Stitch/vendor/imGui/imgui_draw.cpp
+  Stitch/vendor/imGui/imgui_internal.h
+  Stitch/vendor/imGui/imstb_rectpack.h
+  Stitch/vendor/imGui/imstb_textedit.h
+  Stitch/vendor/imGui/imstb_truetype.h
+  Stitch/vendor/imGui/imgui_impl_glfw.cpp
+  Stitch/vendor/imGui/imgui_impl_glfw.h
+  Stitch/vendor/imGui/imgui_tables.cpp
+  Stitch/vendor/imGui/imgui_widgets.cpp
+  Stitch/vendor/imGui/imgui_impl_opengl3.cpp
+  Stitch/vendor/imGui/imgui_impl_opengl3.h
+  Stitch/vendor/imGui/imgui_impl_opengl3_loader.h
 )
 
 option(BUILD_UTILS OFF)
