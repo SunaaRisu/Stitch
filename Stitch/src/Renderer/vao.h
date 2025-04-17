@@ -1,11 +1,10 @@
 #pragma once
 #ifndef VAO_H
 
-#define ASSERT(x) if (!(x)) __builtin_trap();
-
 #include <GL/glew.h>
 #include <vector>
 
+#define ASSERT(x) if (!(x)) __builtin_trap();
 
 // VertexBuffer
 
@@ -84,9 +83,11 @@ inline void VertexBufferLayout::Push<unsigned char>(unsigned int count) {
 class VertexArray {
 private:
   unsigned int m_RendererID;
+  unsigned int m_vbRendererID;
 
 public:
   VertexArray();
+  VertexArray(const VertexBuffer& vb, const VertexBufferLayout& layout);
   VertexArray(const void* data, unsigned int size, const VertexBufferLayout& layout);
   ~VertexArray();
 

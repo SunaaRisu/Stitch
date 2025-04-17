@@ -25,14 +25,23 @@ void VertexBuffer::Unbind() const {
 // VertexArray
 
 VertexArray::VertexArray() {
+  m_vbRendererID = 0;
   glGenVertexArrays(1, &m_RendererID);
 }
 
-VertexArray::VertexArray(const void* data, unsigned int size, const VertexBufferLayout& layout) {
+VertexArray::VertexArray(const VertexBuffer& vb, const VertexBufferLayout& layout) {
+  m_vbRendererID = 0;
   glGenVertexArrays(1, &m_RendererID);
-  VertexBuffer vb(data, size);
+  AddBuffer(vb, layout);
+}
+
+VertexArray::VertexArray(const void* data, unsigned int size, const VertexBufferLayout& layout) {
+  glGenBuffers(1, &m_vbRendererID);
+  glBindBuffer(GL_ARRAY_BUFFER, m_vbRendererID);
+  glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
+
+  glGenVertexArrays(1, &m_RendererID);
   Bind();
-  vb.Bind();
   const auto& elements = layout.GetElements();
   unsigned long offset = 0;
   for (unsigned int i = 0; i < elements.size(); i++) {
@@ -47,6 +56,9 @@ VertexArray::VertexArray(const void* data, unsigned int size, const VertexBuffer
 
 VertexArray::~VertexArray() {
   glDeleteVertexArrays(1, &m_RendererID);
+  if (m_vbRendererID) {
+    glDeleteBuffers(1, &m_vbRendererID);
+  }
 }
 
 void VertexArray::AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout) {
