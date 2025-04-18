@@ -8,6 +8,7 @@ add_library(stitch SHARED
   Stitch/src/Core/display.cpp
   Stitch/src/Renderer/shader.cpp
   Stitch/src/Renderer/vao.cpp
+  Stitch/src/Renderer/ib.cpp
 
   Stitch/vendor/imGui/imconfig.h
   Stitch/vendor/imGui/imgui.cpp
