@@ -11,6 +11,8 @@ public:
   void Clear(float r, float g, float b, float a);
   void Update();
   bool IsClosed();
+  
+  inline GLFWwindow* GetWindow() { return m_window; }
 
   virtual ~Display();
 
