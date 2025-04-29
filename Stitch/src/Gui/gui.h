@@ -1,6 +1,6 @@
-#include "imGui/imgui.h"
-#include "imGui/imgui_impl_glfw.h"
-#include "imGui/imgui_impl_opengl3.h"
+#include "../../vendor/imGui/imgui.h"
+#include "../../vendor/imGui/imgui_impl_glfw.h"
+#include "../../vendor/imGui/imgui_impl_opengl3.h"
 
 enum class GUI_STYLE {CLASSIC, DARK, LIGHT};
 

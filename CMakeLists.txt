@@ -39,7 +39,6 @@ add_subdirectory(Stitch/vendor/glew-2.2.0/build/cmake)
 target_link_libraries(stitch glew_s)
 
 include_directories(Stitch/vendor/glew-2.2.0/include)
-include_directories(Stitch/vendor)
 
 add_subdirectory(Stitch/vendor/glfw)
 target_link_libraries(stitch glfw)
