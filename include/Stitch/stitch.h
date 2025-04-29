@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_INC
+#define CORE_INC
 
 #include "../../Stitch/src/Core/display.h"
 
@@ -10,3 +11,4 @@
 #include "../../Stitch/src/Renderer/renderer.h"
 
 // ------------------------------
+#endif // !CORE_INC
