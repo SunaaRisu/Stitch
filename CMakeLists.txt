@@ -10,6 +10,8 @@ add_library(stitch SHARED
   Stitch/src/Renderer/vao.cpp
   Stitch/src/Renderer/ib.cpp
   Stitch/src/Renderer/renderer.cpp
+  Stitch/src/Debugger/debugger.cpp
+  Stitch/src/Gui/gui.cpp
 
   Stitch/vendor/imGui/imconfig.h
   Stitch/vendor/imGui/imgui.cpp
@@ -32,6 +34,7 @@ add_library(stitch SHARED
 option(BUILD_UTILS OFF)
 option(BUILD_SHARED_LIBS OFF)
 add_compile_options(-fPIC)
+
 add_subdirectory(Stitch/vendor/glew-2.2.0/build/cmake)
 target_link_libraries(stitch glew_s)
 
